@@ -21,8 +21,9 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.frontend.rule=Host(`localhost`) && PathPrefix(`/`)"
-      - "traefik.http.routers.frontend.entrypoints=web"
+      - "traefik.http.routers.frontend.entrypoints=custom"
       - "traefik.http.services.frontend.loadbalancer.server.port=80"
+
 
   backend:
     build:
@@ -30,5 +31,6 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=Host(`localhost`) && PathPrefix(`/api`)"
-      - "traefik.http.routers.backend.entrypoints=web"
+      - "traefik.http.routers.backend.entrypoints=custom"
       - "traefik.http.services.backend.loadbalancer.server.port=8090"
+
