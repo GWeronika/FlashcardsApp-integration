@@ -1,0 +1,18 @@
+api:
+  insecure: true
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+  custom:
+    address: ":3000"
+
+providers:
+  docker:
+    exposedByDefault: false
+
+log:
+  level: ERROR
+  format: common
